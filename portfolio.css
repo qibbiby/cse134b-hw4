@@ -19,7 +19,7 @@ body {
     line-height: 1.9;
     color: var(--text-light);
     background-color: var(--bg-dark);
-    max-width: 800px;
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
     padding: 1.25rem;
@@ -537,6 +537,121 @@ canvas {
     color: var(--primary-color);
 }
 
+
+/* Homework 4: HTML-only contact form */
+
+.no-js-form:not(.js-form) label:not([for="comments"]) {
+    margin-bottom: 1rem;
+}
+
+.no-js-form label[for="comments"] {
+    margin-bottom: 0;
+}
+
+.no-js-form input {
+    max-width: 100%;
+}
+
+.no-js-form textarea {
+    max-width: 100%;
+    resize: vertical;
+    margin-bottom: 2rem;
+}
+
+.no-js-form input,
+.no-js-form textarea {
+    border: 2px solid var(--border-color)
+}
+
+.no-js-form input:focus-visible,
+.no-js-form textarea:focus-visible {
+    outline: none;
+    border: 2px solid var(--primary-color)
+}
+
+/* Invalid fields after user interaction */
+.no-js-form :user-invalid,
+.js-form [aria-invalid="true"] {
+    border-color: #ff4d4d;
+    border-style: dashed;
+
+}
+
+/* Required field indicator */
+.required {
+    color: #ff4d4d;
+    font-weight: normal;
+}
+
+/* HW4 Part 3 */
+.js-form.no-js-form label{
+    margin-bottom: 0;
+}
+
+.js-form input[type="text"],
+.js-form input[type="email"] {
+    margin-bottom: 1rem;
+}
+
+/* Feedback areas */
+.js-form #js-feedback[hidden] {
+    display: none;
+}
+
+.js-form #js-feedback h2 {
+    margin-top: 0rem;
+    margin-bottom: 0.25rem;
+}
+
+.js-form #error-list {
+    margin-top: 0.25rem;
+    padding-left: 1.5rem;
+}
+
+/* Character counter */
+.js-form #comments-info {
+    margin-top: 0.25rem;
+    margin-left: 0.5rem;
+}
+
+/* Near character limit warning */
+.js-form #comments-info.count-warning {
+    color: #ffd18a;
+}
+
+    /* Error message box */
+.js-form #js-feedback section:first-child {
+    background-color: #3d2525;
+    border: 1px solid #ff4d4d;
+    border-radius: 8px;
+    padding: 0.5rem 1rem 0rem;
+    margin: 1rem 0;
+}
+
+.js-form #js-feedback section:first-child h2,
+.js-form #error-list {
+    color: #ffb5b5;
+}
+
+/* Information message box */
+.js-form #js-feedback section:last-child {
+    background-color: #474338;
+    border: 1px solid #ffd18a;
+    border-radius: 8px;
+    padding: 0.5rem 1rem 0rem;
+    margin: 1rem 0;
+}
+
+.js-form #js-feedback section:last-child h2,
+.js-form #comments-info {
+    color: #df9a33;
+}
+
+.js-form #js-feedback section[hidden] {
+    display: none;
+}
+
+
 /* Mobile Responsive Adjustment */
 @media (max-width: 650px) {
 
@@ -603,5 +718,9 @@ canvas {
 
     .experiments-grid {
         flex-direction: column;
+    }
+
+    .no-js-form {
+        padding: 1rem;
     }
 }
